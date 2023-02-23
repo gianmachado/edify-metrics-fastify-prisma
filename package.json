@@ -1,0 +1,23 @@
+{
+  "name": "edify-metrics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json -w",
+    "start": "tsc -w & nodemon dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.2.0",
+    "@prisma/client": "^4.10.1",
+    "fastify": "^4.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "prisma": "^4.10.1",
+    "typescript": "^4.9.5"
+  }
+}

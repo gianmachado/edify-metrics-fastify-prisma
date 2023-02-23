@@ -1,8 +1,7 @@
-import fastify, { FastifyInstance, FastifyRequest } from "fastify";
+import fastify, { FastifyInstance } from "fastify";
 import { PrismaClient } from '@prisma/client'
 const fastify_cors = require('@fastify/cors')
 
-// use it before all route definitions
 const prisma = new PrismaClient()
 const app: FastifyInstance = fastify({
     logger: true
@@ -12,26 +11,10 @@ app.register(fastify_cors, {
     "origin": '*',
 })
 
-
-
-interface ITracker {
-    id: number
-    action: string
-    origin: string
-    plataform: string
-    data: string
-    user: string
-    entity: string
-    created_at: Date
-}
-
 app.get('/health', (_, reply) => {
     reply.send({ message: "Ok" })
 })
 
-type MyRequest = FastifyRequest<{
-    Body: ITracker
-}>
 
 app.get('/sendAction', async (_, reply) => {
 

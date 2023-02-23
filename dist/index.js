@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fastify_1 = __importDefault(require("fastify"));
 const client_1 = require("@prisma/client");
 const fastify_cors = require('@fastify/cors');
-// use it before all route definitions
 const prisma = new client_1.PrismaClient();
 const app = (0, fastify_1.default)({
     logger: true
